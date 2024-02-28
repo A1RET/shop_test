@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet';
 
+import Catalog from "../catalog/Catalog"
+
 const CatalogPage = () => {
     return (
         <>
@@ -10,6 +12,7 @@ const CatalogPage = () => {
                 />
                 <title>Shop</title>
             </Helmet>
+            <Catalog/>
         </>
     )
 }
