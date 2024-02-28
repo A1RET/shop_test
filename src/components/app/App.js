@@ -1,5 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { fetchProducts } from "../catalog/productsSlice";
 
 import Header from "../header/Header";
 
@@ -11,6 +13,12 @@ const ProductPage = lazy(() => import("../pages/ProductPage"));
 const CartPage = lazy(() => import("../pages/CartPage"));
 
 export default function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, []);
+
     return (
         <Router>
             <div className="app">
