@@ -1,0 +1,44 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #2d9cdb;
+
+    &:hover {
+        color: rgb(67,166,223);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .4
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.loading {
+    animation: pulse 1.5s ease-in-out .5s infinite
+}
