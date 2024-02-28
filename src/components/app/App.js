@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { fetchProducts } from "../catalog/productsSlice";
+import { getCartItemsFormCookie } from "../cart/cartSlice";
 
 import Header from "../header/Header";
 
@@ -17,6 +18,10 @@ export default function App() {
 
     useEffect(() => {
         dispatch(fetchProducts());
+    }, []);
+
+    useEffect(() => {
+        dispatch(getCartItemsFormCookie());
     }, []);
 
     return (

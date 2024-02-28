@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet';
 
+import Cart from "../cart/Cart"
+
 const CartPage = () => {
     return (
         <>
@@ -10,6 +12,7 @@ const CartPage = () => {
                 />
                 <title>Cart</title>
             </Helmet>
+            <Cart/>
         </>
     )
 }
